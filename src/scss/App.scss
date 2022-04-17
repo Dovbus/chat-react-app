@@ -1,0 +1,41 @@
+@import 'vars';
+@import 'reset';
+
+.container {
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: 50px auto 50px;
+  @media (max-width: 768px) {
+    max-width: 689px;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 2px solid #11113e;
+  border-radius: 8px;
+}
+
+.search {
+  border: 2px solid $title;
+  background-color: #fff;
+  width: 370px;
+  height: 40px;
+  border-radius: 20px;
+  color: $default;
+  outline-color: $title;
+
+  &::placeholder {
+    color: $default;
+    letter-spacing: 0.7px;
+    font-size: 13px;
+  }
+  @media (max-width: 700px) {
+    width: 305px;
+  }
+  @media (max-width: 500px) {
+    width: 205px;
+    height: 28px;
+  }
+}

@@ -1,0 +1,23 @@
+.dialogue {
+  display: flex;
+  padding: 20px 10px;
+  &__box {
+    display: flex;
+    flex: 1;
+  }
+  &__img {
+    margin-right: 10px;
+  }
+  &__name {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+  }
+  &__message {
+    margin-right: 5px;
+  }
+  &__time {
+    font-size: 14px;
+    letter-spacing: 0.1px;
+  }
+}
