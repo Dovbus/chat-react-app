@@ -28,7 +28,11 @@
 }
 
 .dialogues {
-  padding: 10px;
   border-top: 2px solid #b1afaf;
   background-color: #fff;
+  height: 400px;
+  &__list {
+    overflow-y: auto;
+    max-height: 100%;
+  }
 }

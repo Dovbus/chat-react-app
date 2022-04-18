@@ -28,7 +28,7 @@
 
   &::placeholder {
     color: $default;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.2px;
     font-size: 13px;
   }
   @media (max-width: 700px) {
@@ -38,4 +38,23 @@
     width: 205px;
     height: 28px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #b1afaf;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #b1afaf;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e0e1e4;
+}
+
+html,
+body {
+  scrollbar-color: #b1afaf #e0e1e4;
+  scrollbar-width: thin;
 }

@@ -1,13 +1,24 @@
-import './scss/App.scss';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { loadChats } from './redux/chatsSlice';
+import { loadCurrentUser } from './redux/currentUserSlice';
 import Container from './components/Container/Container';
 import Dialogues from './components/Dialogues/Dialogues';
-import Messages from './components/Messages/Messages';
+import Chat from './components/Chat/Chat';
+
+import './scss/App.scss';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadChats());
+    dispatch(loadCurrentUser());
+  }, [dispatch]);
+
   return (
     <Container>
       <Dialogues />
-      <Messages />
+      <Chat />
     </Container>
   );
 }
