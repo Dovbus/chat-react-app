@@ -1,14 +1,18 @@
 import React from 'react';
 import UserInfo from '../UserInfo/UserInfo';
+import Messages from '../Messages/Messages';
+import ChatInput from '../ChatInput/ChatInput';
 import './Chat.scss';
 
-function Messages() {
+function Chat() {
   return (
     <section className="chat">
       <UserInfo />
       <Messages />
+
+      <ChatInput />
     </section>
   );
 }
 
-export default Messages;
+export default Chat;

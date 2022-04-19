@@ -12,13 +12,26 @@ const messagesSlice = createSlice({
     loadMessages: (state, action) => {
       state.messages = action.payload;
     },
+    addMessage: (state, action) => {
+      state.messages.push({
+        id: Math.random(),
+        content: action.payload,
+        createdAt: new Date().getTime(),
+        'user-id': 1000,
+      });
+    },
+    receiveMessage: (state, action) => {
+      state.messages.push({
+        ...action.payload,
+      });
+    },
   },
 });
 
-const { loadMessages } = messagesSlice.actions;
+const { loadMessages, addMessage, receiveMessage } = messagesSlice.actions;
 
 const useMessages = () => useSelector((state) => state.messages.messages);
 
-export { loadMessages, useMessages };
+export { loadMessages, addMessage, useMessages, receiveMessage };
 
 export default messagesSlice.reducer;

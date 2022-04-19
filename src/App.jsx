@@ -7,6 +7,7 @@ import Dialogues from './components/Dialogues/Dialogues';
 import Chat from './components/Chat/Chat';
 
 import './scss/App.scss';
+import 'react-notifications/lib/notifications.css';
 
 function App() {
   const dispatch = useDispatch();
