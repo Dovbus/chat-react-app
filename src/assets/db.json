@@ -9,33 +9,37 @@
       "chat-id": 1,
       "user": {
         "user-id": 2000,
-        "username": "Amy Robson",
-        "image": "assets/avatars/image-amyrobson.png"
+        "username": "Alex Robson",
+        "image": "assets/avatars/image-alexrobson.png"
       },
       "messages": [
         {
           "id": 101,
           "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
           "createdAt": 1648380672000,
-          "user-id": 1000
+          "user-id": 1000,
+          "sendTo": "Alex Robson"
         },
         {
           "id": 102,
           "content": "Look, please, on my Github page for recent project.",
           "createdAt": 1648383672000,
-          "user-id": 1000
+          "user-id": 1000,
+          "sendTo": "Alex Robson"
         },
         {
           "id": 103,
           "content": "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
           "createdAt": 1648985472000,
-          "user-id": 2000
+          "user-id": 2000,
+          "sendTo": "User"
         },
         {
           "id": 104,
           "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
           "createdAt": 1648986472000,
-          "user-id": 1000
+          "user-id": 1000,
+          "sendTo": "Alex Robson"
         }
       ]
     },
@@ -51,19 +55,22 @@
           "id": 201,
           "content": "I commented on Figma, I want to add some fancy icons. Do you have any icon set?",
           "createdAt": 1649590272000,
-          "user-id": 3000
+          "user-id": 3000,
+          "sedTo": "User"
         },
         {
           "id": 202,
           "content": "I am in a process of designing some. When do you need them?",
           "createdAt": 1649594272000,
-          "user-id": 1000
+          "user-id": 1000,
+          "sedTo": "Ramses Miron"
         },
         {
           "id": 203,
           "content": "I'll need them next month",
           "createdAt": 1649598272000,
-          "user-id": 3000
+          "user-id": 3000,
+          "sedTo": "User"
         }
       ]
     },
@@ -79,19 +86,22 @@
           "id": 401,
           "content": "Good morning and have a good day",
           "createdAt": 1649935872000,
-          "user-id": 4000
+          "user-id": 4000,
+          "sendTo": "User"
         },
         {
           "id": 402,
           "content": "Thank you! You too. What are you going to do today?",
           "createdAt": 1649939872000,
-          "user-id": 1000
+          "user-id": 1000,
+          "sendTo": "Max Blagun"
         },
         {
           "id": 403,
           "content": "I am going to learn English:)",
           "createdAt": 1649965872000,
-          "user-id": 4000
+          "user-id": 4000,
+          "sendTo": "User"
         }
       ]
     },
@@ -107,19 +117,22 @@
           "id": 501,
           "content": "Could you finish that report for me today?",
           "createdAt": 1649935872000,
-          "user-id": 5000
+          "user-id": 5000,
+          "sendTo": "User"
         },
         {
           "id": 502,
           "content": "Of course. It will be ready in 1 hour.",
           "createdAt": 1649939872000,
-          "user-id": 1000
+          "user-id": 1000,
+          "sendTo": "Sara Johnson"
         },
         {
           "id": 503,
           "content": "I'll be waiting",
           "createdAt": 1649965872000,
-          "user-id": 5000
+          "user-id": 5000,
+          "sendTo": "User"
         }
       ]
     },
@@ -135,19 +148,22 @@
           "id": 601,
           "content": "Hi - how are you doing, mate?",
           "createdAt": 1650108672000,
-          "user-id": 6000
+          "user-id": 6000,
+          "sendTo": "User"
         },
         {
           "id": 602,
           "content": "Can't complain. What about you?",
           "createdAt": 1650151872000,
-          "user-id": 1000
+          "user-id": 1000,
+          "sendTo": "Micheal Joshua"
         },
         {
           "id": 603,
           "content": "I'm little upset",
           "createdAt": 1650173475000,
-          "user-id": 6000
+          "user-id": 6000,
+          "sendTo": "User"
         }
       ]
     }

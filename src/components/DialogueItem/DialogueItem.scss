@@ -1,7 +1,12 @@
 .dialogue {
-  display: flex;
   padding: 20px 10px;
   cursor: pointer;
+  display: flex;
+  &--receive {
+    background-color: #405267;
+    border-radius: 10px;
+    color: #fff;
+  }
   &__box {
     display: flex;
     flex: 1;

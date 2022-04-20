@@ -15,15 +15,14 @@ const messagesSlice = createSlice({
     addMessage: (state, action) => {
       state.messages.push({
         id: Math.random(),
-        content: action.payload,
+        content: action.payload.message,
         createdAt: new Date().getTime(),
         'user-id': 1000,
+        sendTo: action.payload.sendTo,
       });
     },
     receiveMessage: (state, action) => {
-      state.messages.push({
-        ...action.payload,
-      });
+      state.messages.push(action.payload);
     },
   },
 });
@@ -32,6 +31,6 @@ const { loadMessages, addMessage, receiveMessage } = messagesSlice.actions;
 
 const useMessages = () => useSelector((state) => state.messages.messages);
 
-export { loadMessages, addMessage, useMessages, receiveMessage };
+export { loadMessages, useMessages, addMessage, receiveMessage };
 
 export default messagesSlice.reducer;

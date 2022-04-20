@@ -9,7 +9,6 @@ function Chat() {
     <section className="chat">
       <UserInfo />
       <Messages />
-
       <ChatInput />
     </section>
   );

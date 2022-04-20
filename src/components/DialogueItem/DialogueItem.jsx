@@ -2,13 +2,19 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loadMessages } from '../../redux/messagesSlice';
 import { loadUser } from '../../redux/userSlice';
+import { useChats } from '../../redux/chatsSlice';
+import { useNotificationShow } from '../../redux/notificationSlice';
 import { formatDialogueDate } from '../../helpers';
 
+import clsx from 'clsx';
 import './DialogueItem.scss';
 
 function DialogueItem({ chat }) {
   const { user, messages } = chat;
   const dispatch = useDispatch();
+  const isNotification = useNotificationShow();
+  const chats = useChats();
+  const index = chats.findIndex((chat) => chat.user.username === user.username);
   const date = formatDialogueDate(messages[messages.length - 1].createdAt);
   const message = messages[messages.length - 1].content
     .split(' ')
@@ -20,8 +26,15 @@ function DialogueItem({ chat }) {
     dispatch(loadUser(user));
   }
 
+  //isNotification і перший в списку
+
   return (
-    <li className="dialogue" onClick={handleDialogueClick}>
+    <li
+      className={clsx('dialogue', {
+        'dialogue--receive': isNotification,
+      })}
+      onClick={handleDialogueClick}
+    >
       <div className="dialogue__box">
         <img className="dialogue__img" src={`src/${user.image}`} alt="avatar" />
         <div className="dialogue__content">
