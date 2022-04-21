@@ -8,6 +8,7 @@ import {
   useSearchedChats,
 } from '../../redux/chatsSlice';
 import { useCurrentUser } from '../../redux/currentUserSlice';
+import { removeUser } from '../../redux/authSlice';
 
 import './Dialogues.scss';
 
@@ -25,6 +26,7 @@ function Dialogues() {
   return (
     <div className="sidebar">
       <img className="avatar" src={`src/${currentUser.image}`} alt="user" />
+      <button onClick={() => dispatch(removeUser())}>Log out</button>
       <Input
         className="sidebar__search"
         placeholder="search or start new chat"

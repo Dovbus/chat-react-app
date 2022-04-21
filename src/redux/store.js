@@ -4,6 +4,7 @@ import messagesReducer from './messagesSlice';
 import currentUserReducer from './currentUserSlice';
 import userReducer from './userSlice';
 import notificationReducer from './notificationSlice';
+import authReducer from './authSlice';
 import {
   persistStore,
   persistReducer,
@@ -17,6 +18,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
+  auth: authReducer,
   chats: chatsReducer,
   messages: messagesReducer,
   currentUser: currentUserReducer,
@@ -27,7 +29,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['notification'],
+  blacklist: ['notification', 'auth'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,26 +1,18 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { loadChats } from './redux/chatsSlice';
-import { loadCurrentUser } from './redux/currentUserSlice';
-import Container from './components/Container/Container';
-import Dialogues from './components/Dialogues/Dialogues';
-import Chat from './components/Chat/Chat';
-
-import './scss/App.scss';
-import 'react-notifications/lib/notifications.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadChats());
-    dispatch(loadCurrentUser());
-  }, [dispatch]);
-
   return (
-    <Container>
-      <Dialogues />
-      <Chat />
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
