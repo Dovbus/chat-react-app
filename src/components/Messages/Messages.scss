@@ -4,10 +4,20 @@
   height: 430px;
   display: flex;
   flex-direction: column;
-  //justify-content: flex-end;
   &__box {
     max-height: 100%;
     overflow-y: auto;
     padding: 10px 10px 5px 2px;
+  }
+  &__empty {
+    background-color: #b1afaf8b;
+    max-width: 400px;
+    margin: 40px auto 0;
+    width: 100%;
+    padding: 5px 20px;
+    color: rgba(0, 0, 255, 0.39);
+    font-size: 17px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+    border-radius: 5px;
   }
 }

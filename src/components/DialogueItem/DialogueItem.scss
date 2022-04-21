@@ -2,9 +2,8 @@
   padding: 20px 10px;
   cursor: pointer;
   display: flex;
-  &--receive {
-    background-color: #405267;
-    border-radius: 10px;
+  &--receive:first-child {
+    background-color: #28289c42;
     color: #fff;
   }
   &__box {
@@ -13,6 +12,7 @@
   }
   &__img {
     margin-right: 10px;
+    display: flex;
   }
   &__name {
     font-weight: 500;
@@ -22,10 +22,11 @@
   &__message {
     margin-right: 5px;
     opacity: 0.8;
+    letter-spacing: 0.1px;
   }
   &__time {
     font-size: 14px;
     letter-spacing: 0.1px;
-    font-weight: 300;
+    opacity: 0.7;
   }
 }

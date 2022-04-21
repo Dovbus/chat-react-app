@@ -18,18 +18,19 @@
 }
 
 .search {
-  border: 2px solid $title;
+  border: 2px solid rgb(176, 170, 170);
   background-color: #fff;
   width: 370px;
   height: 40px;
   border-radius: 20px;
   color: $default;
-  outline-color: $title;
+  outline-color: rgb(176, 170, 170);
 
   &::placeholder {
-    color: $default;
-    letter-spacing: 0.2px;
-    font-size: 13px;
+    color: rgba(0, 0, 255, 0.39);
+    font-size: 15px;
+    opacity: 0.8;
+    font-weight: 500;
   }
   @media (max-width: 700px) {
     width: 305px;
@@ -38,6 +39,11 @@
     width: 205px;
     height: 28px;
   }
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
 }
 
 ::-webkit-scrollbar {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Input from '../UI/Input';
 import DialogueItem from '../DialogueItem/DialogueItem';
@@ -16,6 +16,11 @@ function Dialogues() {
   const searchedChats = useSearchedChats();
   const currentUser = useCurrentUser();
   const dispatch = useDispatch();
+  const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    dispatch(setChatsSearch(search));
+  }, [search]);
 
   return (
     <div className="sidebar">
@@ -23,12 +28,21 @@ function Dialogues() {
       <Input
         className="sidebar__search"
         placeholder="search or start new chat"
-        onChange={(e) => dispatch(setChatsSearch(e.target.value))}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
+      <button className="sidebar__button" onClick={() => setSearch('')}>
+        <img
+          className="sidebar__close"
+          src={'../src/assets/shared/icon-close.svg'}
+          alt="close icon"
+        />
+      </button>
+
       <h1 className="sidebar__title">Chats</h1>
       <div className="dialogues">
         <ul className="dialogues__list">
-          {!searchedChats.length &&
+          {!search &&
             chats &&
             chats.map((chat) => {
               return (
@@ -36,7 +50,7 @@ function Dialogues() {
               );
             })}
         </ul>
-        {searchedChats && searchedChats.length && (
+        {search && (
           <div className="suggestion">
             <ul className="suggestion__list">
               {searchedChats.map((searched) => {

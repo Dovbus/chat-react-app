@@ -7,7 +7,11 @@ import {
   sortChats,
   useChats,
 } from '../../redux/chatsSlice';
-import { addMessage, receiveMessage } from '../../redux/messagesSlice';
+import {
+  addMessage,
+  receiveMessage,
+  useMessages,
+} from '../../redux/messagesSlice';
 import { useUser } from '../../redux/userSlice';
 import {
   showNotification,
@@ -25,6 +29,7 @@ function ChatInput() {
   const user = useUser();
   const isNotificationShow = useNotificationShow();
   const { get } = useFetch(URL_MESSAGE);
+  const messages = useMessages();
 
   useEffect(() => {
     get('jokes/random')
@@ -68,18 +73,20 @@ function ChatInput() {
   return (
     <>
       <div className="type">
-        <form action="#" className="type__form" onSubmit={handleFormSubmit}>
-          <Input
-            type="text"
-            className="type__input"
-            placeholder="Type your message..."
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></Input>
-          <button className="type__btn" type="submit">
-            <img src={'src/assets/shared/icon-send.svg'} alt="send icon" />
-          </button>
-        </form>
+        {messages.length !== 0 && (
+          <form action="#" className="type__form" onSubmit={handleFormSubmit}>
+            <Input
+              type="text"
+              className="type__input"
+              placeholder="Type your message..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></Input>
+            <button className="type__btn" type="submit">
+              <img src={'src/assets/shared/icon-send.svg'} alt="send icon" />
+            </button>
+          </form>
+        )}
       </div>
       {isNotificationShow && (
         <div className="notify-box">
@@ -88,7 +95,7 @@ function ChatInput() {
             src={'src/assets/shared/icon-mail.svg'}
             alt="mail"
           />
-          You got mail!
+          You've Got Mail!
         </div>
       )}
     </>

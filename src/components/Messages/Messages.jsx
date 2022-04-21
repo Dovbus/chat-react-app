@@ -21,6 +21,11 @@ function Messages() {
       <div className="messages">
         <div className="messages__box">
           <div className="messages__content">
+            {!messages.length && (
+              <p className="messages__empty">
+                Choose the chat to start a conversation
+              </p>
+            )}
             {messages.map((message) => {
               return (
                 <Message

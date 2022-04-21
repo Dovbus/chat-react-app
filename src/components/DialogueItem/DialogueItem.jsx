@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loadMessages } from '../../redux/messagesSlice';
 import { loadUser } from '../../redux/userSlice';
-import { useChats } from '../../redux/chatsSlice';
 import { useNotificationShow } from '../../redux/notificationSlice';
 import { formatDialogueDate } from '../../helpers';
 
@@ -13,20 +12,16 @@ function DialogueItem({ chat }) {
   const { user, messages } = chat;
   const dispatch = useDispatch();
   const isNotification = useNotificationShow();
-  const chats = useChats();
-  const index = chats.findIndex((chat) => chat.user.username === user.username);
   const date = formatDialogueDate(messages[messages.length - 1].createdAt);
-  const message = messages[messages.length - 1].content
-    .split(' ')
-    .slice(-5)
-    .join(' ');
+  const message =
+    messages[messages.length - 1].content.length > 15
+      ? '...' + messages[messages.length - 1].content.slice(-15)
+      : messages[messages.length - 1].content;
 
   function handleDialogueClick() {
     dispatch(loadMessages(messages));
     dispatch(loadUser(user));
   }
-
-  //isNotification і перший в списку
 
   return (
     <li
