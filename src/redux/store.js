@@ -29,7 +29,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['notification', 'auth'],
+  blacklist: ['notification'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

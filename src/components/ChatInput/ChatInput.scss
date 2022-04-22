@@ -1,6 +1,7 @@
 .type {
   padding: 35px 10px 5px 15px;
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: #9adcff;
+  border-top: 2px solid #15a796;
   &__form {
     display: flex;
     justify-content: flex-start;
@@ -26,7 +27,7 @@
     border: none;
     outline-color: #fff;
     &::placeholder {
-      color: rgba(0, 0, 255, 0.39);
+      color: #339dff;
       font-size: 16px;
     }
   }
@@ -36,7 +37,7 @@
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: rgba(255, 255, 255, 0.944);
+  background-color: #fff;
   color: #0000ffbe;
   padding: 5px 35px;
   border-radius: 2px;

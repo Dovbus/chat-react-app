@@ -1,0 +1,47 @@
+.login {
+  background-color: #fff;
+  &__page {
+    background-image: linear-gradient(-45deg, #1567f6ad 0%, #04c0fed1 100%);
+    border-top-left-radius: 50%;
+    height: 100vh;
+  }
+  &__container {
+    padding: 100px 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding-right: 35px;
+  }
+  &__register {
+    &:hover {
+      box-shadow: 0 4px 6px rgba(15, 44, 209, 0.575);
+    }
+  }
+  &__link {
+    color: #339dff;
+  }
+  &__inner {
+    background-color: #fff;
+    padding: 150px;
+    border-radius: 40px;
+    box-shadow: 0 4px 6px rgba(83, 100, 255, 0.45);
+  }
+  &__new {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  &__please {
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    margin-bottom: 30px;
+  }
+}

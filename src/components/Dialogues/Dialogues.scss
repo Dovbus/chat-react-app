@@ -1,6 +1,10 @@
 .sidebar {
-  background-color: #e0e0e2;
+  background-color: #9adcff;
   position: relative;
+  border-top-left-radius: 15px;
+  border: 2px solid #15a796;
+  border-right: none;
+
   &__search {
     margin: 0 5px 40px 10px;
     padding: 0 5px 0 30px;
@@ -19,7 +23,7 @@
   &__close {
     opacity: 0;
     position: absolute;
-    top: 101px;
+    top: 113px;
     right: 35px;
     cursor: pointer;
   }
@@ -29,17 +33,26 @@
     margin-bottom: 40px;
     margin-left: 10px;
   }
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__log-out {
+    width: 120px;
+  }
 }
 
 .avatar {
   margin-bottom: 20px;
+  margin-top: 12px;
   padding: 10px;
   width: 70px;
   height: 70px;
 }
 
 .dialogues {
-  border-top: 2px solid #b1afaf;
+  border-top: 2px solid #15a796;
   background-color: #fff;
   height: 400px;
   &__list {

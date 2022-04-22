@@ -4,6 +4,7 @@ const initialState = {
   email: null,
   token: null,
   id: null,
+  error: null,
 };
 
 const authSlice = createSlice({
@@ -20,9 +21,12 @@ const authSlice = createSlice({
       state.token = null;
       state.id = null;
     },
+    setError: (state, action) => {
+      state.error = action.payload;
+    },
   },
 });
 
-export const { setUser, removeUser } = authSlice.actions;
+export const { setUser, removeUser, setError } = authSlice.actions;
 
 export default authSlice.reducer;

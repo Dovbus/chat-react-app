@@ -9,6 +9,7 @@ export default function Input(props) {
       className={classes}
       type={type}
       placeholder={placeholder}
+      autoComplete="false"
       {...rest}
     />
   );

@@ -13,24 +13,21 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  border: 2px solid #11113e;
-  border-radius: 8px;
 }
 
 .search {
-  border: 2px solid rgb(176, 170, 170);
+  border: 2px solid #fff;
   background-color: #fff;
   width: 370px;
   height: 40px;
   border-radius: 20px;
-  color: $default;
-  outline-color: rgb(176, 170, 170);
+  color: #339dff;
+  outline-color: #fff;
 
   &::placeholder {
-    color: rgba(0, 0, 255, 0.39);
+    color: #339dff;
     font-size: 15px;
     opacity: 0.8;
-    font-weight: 500;
   }
   @media (max-width: 700px) {
     width: 305px;
@@ -41,26 +38,96 @@
   }
 }
 
+.button {
+  border: none;
+  border: 2px solid #d9edff;
+  color: #339dff;
+  font-size: 13px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 100px;
+  padding: 0 22px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #fff;
+  width: 140px;
+  margin-right: 3px;
+  width: 170px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 2px 4px rgba(83, 100, 255, 0.45);
+  }
+}
+
+.outline {
+  background: #339dff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 38px;
+  border-radius: 50px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 170px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    box-shadow: 0 2px 4px rgba(83, 100, 255, 0.57);
+  }
+}
+
 .spinner {
   width: 30px;
   height: 30px;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__input {
+    background-color: #f0f0f0;
+    border: none;
+    margin-bottom: 20px;
+    padding: 25px 10px 25px 50px;
+    border-radius: 25px;
+    &--email {
+      background-image: url('../assets/shared/icon-email.svg');
+      background-repeat: no-repeat;
+      background-position: center left 20px;
+    }
+    &--password {
+      background-image: url('../assets/shared/icon-password.svg');
+      background-repeat: no-repeat;
+      background-position: center left 20px;
+    }
+  }
+}
+
+.error {
+  font-size: 13px;
+  color: #921414;
+  margin-top: -15px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: #b1afaf;
+  background-color: #9adcff;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color: #b1afaf;
+  background-color: #9adcff;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e0e1e4;
+  background-color: #fff;
 }
 
 html,
 body {
-  scrollbar-color: #b1afaf #e0e1e4;
+  scrollbar-color: #9adcff #fff;
   scrollbar-width: thin;
 }

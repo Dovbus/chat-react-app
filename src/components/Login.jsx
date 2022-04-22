@@ -1,18 +1,18 @@
 import { useDispatch } from 'react-redux';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { setUser } from '../redux/authSlice';
+import { setUser, setError } from '../redux/authSlice';
 import Form from './Form';
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const auth = getAuth();
+  dispatch(setError(null));
 
   function handleLogin(email, password) {
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -20,12 +20,16 @@ function Login() {
             id: user.uid,
           })
         );
+        dispatch(setError(null));
         navigate('/');
       })
-      .catch(alert('Invalid user'));
+      .catch((error) => {
+        console.log(error);
+        dispatch(setError('Invalid user'));
+      });
   }
 
-  return <Form title="sign in" handleFormSubmit={handleLogin} />;
+  return <Form title="Sign In" handleFormSubmit={handleLogin} />;
 }
 
 export default Login;
