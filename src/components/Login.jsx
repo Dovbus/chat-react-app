@@ -24,8 +24,7 @@ function Login() {
         navigate('/');
       })
       .catch((error) => {
-        console.log(error);
-        dispatch(setError('Invalid user'));
+        dispatch(setError(error.code));
       });
   }
 

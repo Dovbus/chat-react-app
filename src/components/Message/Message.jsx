@@ -1,6 +1,6 @@
 import React from 'react';
-import { formatChatsDate } from '../../helpers';
 import clsx from 'clsx';
+import { formatChatsDate } from '../../helpers';
 
 import './Message.scss';
 

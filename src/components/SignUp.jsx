@@ -24,8 +24,7 @@ function SignUp() {
         navigate('/');
       })
       .catch((error) => {
-        console.log(error);
-        dispatch(setError(error));
+        dispatch(setError(error.code));
       });
   }
 

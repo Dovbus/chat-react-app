@@ -3,8 +3,11 @@
   cursor: pointer;
   display: flex;
   &--receive:first-child {
-    background-color: #d2c3c3ce;
+    background-color: #647669ce;
     color: #fff;
+    .dialogue__time {
+      color: #fff;
+    }
   }
   &__box {
     display: flex;
@@ -15,7 +18,7 @@
     display: flex;
   }
   &__name {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     letter-spacing: 0.6px;
   }
@@ -28,5 +31,6 @@
     font-size: 14px;
     letter-spacing: 0.1px;
     opacity: 0.7;
+    color: #356680;
   }
 }

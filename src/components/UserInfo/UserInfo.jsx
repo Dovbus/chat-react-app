@@ -5,6 +5,7 @@ import './UserInfo.scss';
 
 function UserInfo() {
   const user = useUser();
+
   return (
     <div className="user-info">
       <div className="user-info__box">

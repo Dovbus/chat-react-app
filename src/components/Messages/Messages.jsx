@@ -26,15 +26,16 @@ function Messages() {
                 Choose the chat to start a conversation
               </p>
             )}
-            {messages.map((message) => {
-              return (
-                <Message
-                  key={message.id}
-                  message={message}
-                  user={user}
-                ></Message>
-              );
-            })}
+            {messages &&
+              messages.map((message) => {
+                return (
+                  <Message
+                    key={message.id}
+                    message={message}
+                    user={user}
+                  ></Message>
+                );
+              })}
           </div>
           <div ref={messagesEndRef}></div>
         </div>

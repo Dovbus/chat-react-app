@@ -1,16 +1,18 @@
 .user-info {
-  border-bottom: 2px solid #15a796;
+  border-bottom: 3px solid #031322;
   &__box {
     display: flex;
     align-items: center;
     padding: 10px;
   }
   &__img {
-    margin-right: 10px;
+    margin-right: 20px;
   }
   &__name {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
   }
   &__no-img {
     height: 50px;

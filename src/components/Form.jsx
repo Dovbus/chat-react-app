@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import Input from './UI/Input';
 import Button from './UI/Button';
 
+import clsx from 'clsx';
 import '../scss/App.scss';
 
 function Form({ title, handleFormSubmit }) {
@@ -13,7 +13,7 @@ function Form({ title, handleFormSubmit }) {
 
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
   } = useForm({ mode: 'onBlur' });
 
@@ -25,13 +25,15 @@ function Form({ title, handleFormSubmit }) {
     <form className="form" action="#" onSubmit={handleSubmit(onSubmit)}>
       <div>
         <input
-          className="search form__input form__input--email"
           {...register('email', {
             required: true,
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'invalid email address',
+              message: 'Invalid email address',
             },
+          })}
+          className={clsx('search', 'form__input', 'form__input--email', {
+            'form__input--error': errors?.email,
           })}
           type="email"
           value={email}
@@ -40,12 +42,12 @@ function Form({ title, handleFormSubmit }) {
           autoComplete="false"
         />
         {errors?.email ? (
-          <p className="error">Enter an email</p>
-        ) : error?.code === 'auth/user-not-found' ? (
+          <p className="error">{errors?.email?.message || 'Enter the email'}</p>
+        ) : error === 'auth/user-not-found' ? (
           <p className="error">User is not found</p>
-        ) : error?.code === 'auth/email-already-in-use' ? (
+        ) : error === 'auth/email-already-in-use' ? (
           <p className="error">Email is already in use</p>
-        ) : error?.code === 'auth/invalid-email' ? (
+        ) : error === 'auth/invalid-email' ? (
           <p className="error">Invalid email</p>
         ) : (
           ''
@@ -56,8 +58,11 @@ function Form({ title, handleFormSubmit }) {
         <input
           {...register('password', {
             required: true,
+            minLength: { value: 6, message: 'At least 6 characters' },
           })}
-          className="search form__input form__input--password"
+          className={clsx('search', 'form__input', 'form__input--password', {
+            'form__input--error': errors?.password,
+          })}
           type="password"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
@@ -65,16 +70,18 @@ function Form({ title, handleFormSubmit }) {
           autoComplete="false"
         />
         {errors?.password ? (
-          <p className="error">Enter the password</p>
-        ) : error?.code === 'auth/weak-password' ? (
+          <p className="error">
+            {errors?.password?.message || 'Enter the password'}
+          </p>
+        ) : error === 'auth/weak-password' ? (
           <p className="error">Unreliable password</p>
-        ) : error?.code === 'auth/wrong-password' ? (
+        ) : error === 'auth/wrong-password' ? (
           <p className="error">Wrong password</p>
         ) : (
           ''
         )}
       </div>
-      <Button outline type="submit">
+      <Button outline type="submit" disabled={!isValid}>
         {title}
       </Button>
     </form>

@@ -7,5 +7,5 @@ export function formatDialogueDate(timestamp) {
 
 export function formatChatsDate(timestamp) {
   const date = new Date(timestamp);
-  return format(date, 'dd/MM/yy,  h:m aa');
+  return format(date, 'dd/MM/yy,  h:mm aa');
 }

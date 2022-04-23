@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import clsx from 'clsx';
 import { loadMessages } from '../../redux/messagesSlice';
 import { loadUser } from '../../redux/userSlice';
 import { useNotificationShow } from '../../redux/notificationSlice';
 import { formatDialogueDate } from '../../helpers';
 
-import clsx from 'clsx';
 import './DialogueItem.scss';
 
 function DialogueItem({ chat }) {
@@ -13,10 +13,9 @@ function DialogueItem({ chat }) {
   const dispatch = useDispatch();
   const isNotification = useNotificationShow();
   const date = formatDialogueDate(messages[messages.length - 1].createdAt);
-  const message =
-    messages[messages.length - 1].content.length > 15
-      ? '...' + messages[messages.length - 1].content.slice(-15)
-      : messages[messages.length - 1].content;
+  const message = messages[messages.length - 1].content.length > 15
+    ? `...${messages[messages.length - 1].content.slice(-15)}`
+    : messages[messages.length - 1].content;
 
   function handleDialogueClick() {
     dispatch(loadMessages(messages));

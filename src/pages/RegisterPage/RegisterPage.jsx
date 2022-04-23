@@ -31,10 +31,3 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
-
-{
-  /*<p>
-        Already have an account? <Link to="/login">Sign in</Link>
-      </p>
-      <SignUp />*/
-}

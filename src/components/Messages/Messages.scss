@@ -1,6 +1,6 @@
 .messages {
   background-color: #fff;
-  height: 430px;
+  height: calc(100vh - 230px);
   display: flex;
   flex-direction: column;
   &__box {
@@ -14,9 +14,9 @@
     margin: 40px auto 0;
     width: 100%;
     padding: 5px 20px;
-    color: rgba(0, 0, 255, 0.39);
+    color: #356680;
     font-size: 17px;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+    box-shadow: 12px 12px 2px 1px #356680;
     border-radius: 5px;
   }
 }

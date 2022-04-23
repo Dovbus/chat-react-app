@@ -4,7 +4,7 @@
 .container {
   max-width: 1200px;
   padding: 0 10px;
-  margin: 50px auto 50px;
+  margin: 0 auto;
   @media (max-width: 768px) {
     max-width: 689px;
   }
@@ -21,11 +21,11 @@
   width: 370px;
   height: 40px;
   border-radius: 20px;
-  color: #339dff;
+  color: #356680;
   outline-color: #fff;
 
   &::placeholder {
-    color: #339dff;
+    color: #356680;
     font-size: 15px;
     opacity: 0.8;
   }
@@ -72,6 +72,11 @@
   text-align: center;
   cursor: pointer;
   border: none;
+  &:disabled {
+    &:hover {
+      box-shadow: none;
+    }
+  }
   &:hover {
     box-shadow: 0 2px 4px rgba(83, 100, 255, 0.57);
   }
@@ -96,11 +101,16 @@
       background-image: url('../assets/shared/icon-email.svg');
       background-repeat: no-repeat;
       background-position: center left 20px;
+      z-index: 7;
     }
     &--password {
       background-image: url('../assets/shared/icon-password.svg');
       background-repeat: no-repeat;
       background-position: center left 20px;
+    }
+    &--error {
+      outline-color: #921414;
+      border: 2px solid #921414;
     }
   }
 }
@@ -115,19 +125,19 @@
 
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: #9adcff;
+  background-color: #356680;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color: #9adcff;
+  background-color: #356680;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #fff;
+  background-color: #ffffffd5;
 }
 
 html,
 body {
-  scrollbar-color: #9adcff #fff;
+  scrollbar-color: #356680 #ffffffd5;
   scrollbar-width: thin;
 }

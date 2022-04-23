@@ -5,7 +5,6 @@ import {
   addChatMessage,
   receiveChatMessage,
   sortChats,
-  useChats,
 } from '../../redux/chatsSlice';
 import {
   addMessage,
@@ -19,6 +18,7 @@ import {
   useNotificationShow,
 } from '../../redux/notificationSlice';
 import Input from '../UI/Input';
+import Notification from '../Notification/Notification';
 
 import './ChatInput.scss';
 
@@ -81,23 +81,12 @@ function ChatInput() {
               placeholder="Type your message..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-            ></Input>
-            <button className="type__btn" type="submit">
-              <img src={'src/assets/shared/icon-send.svg'} alt="send icon" />
-            </button>
+            />
+            <button className="type__btn" type="submit" />
           </form>
         )}
       </div>
-      {isNotificationShow && (
-        <div className="notify-box">
-          <img
-            className="notify-box__img"
-            src={'src/assets/shared/icon-mail.svg'}
-            alt="mail"
-          />
-          You've Got Mail!
-        </div>
-      )}
+      {isNotificationShow && <Notification />}
     </>
   );
 }
