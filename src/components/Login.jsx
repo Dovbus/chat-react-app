@@ -8,10 +8,10 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   dispatch(setError(null));
+  const auth = getAuth();
 
   function handleLogin(email, password) {
     console.log(vite);
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(

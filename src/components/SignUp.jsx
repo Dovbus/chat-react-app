@@ -7,12 +7,12 @@ import Form from './Form';
 function SignUp() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const auth = getAuth();
 
   dispatch(setError(null));
 
   function handleRegister(email, password) {
     console.log(vite);
-    const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(
