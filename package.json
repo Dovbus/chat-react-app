@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "dev": "concurrently \"npm run start\"  \"npm run server\"",
-    "server": "json-server ./src/db.json --watch --port 5000"
+    "server": "json-server ./src/db.json --watch --port 5001"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",

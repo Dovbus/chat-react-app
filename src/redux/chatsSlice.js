@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 
-const URL = 'https://localhost:5000/chats';
+const URL = '/chats';
 
 export const loadChats = createAsyncThunk(
   'chats/loadChats',

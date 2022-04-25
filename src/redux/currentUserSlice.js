@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 
-const URL_USER = 'https://localhost:5000/currentUser';
+const URL_USER = '/currentUser';
 
 export const loadCurrentUser = createAsyncThunk(
   'currentUser/loadCurrentUser',
