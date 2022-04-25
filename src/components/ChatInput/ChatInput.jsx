@@ -26,7 +26,7 @@ function ChatInput() {
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState({});
   const dispatch = useDispatch();
-  const user = useUser();
+  const user = useUser();пше фвв
   const isNotificationShow = useNotificationShow();
   const { get } = useFetch(URL_MESSAGE);
   const messages = useMessages();
