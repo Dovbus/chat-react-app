@@ -7,10 +7,11 @@ import Form from './Form';
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const auth = getAuth();
   dispatch(setError(null));
 
   function handleLogin(email, password) {
+    console.log(vite);
+    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(
