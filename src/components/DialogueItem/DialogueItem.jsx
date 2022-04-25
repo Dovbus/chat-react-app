@@ -31,11 +31,7 @@ function DialogueItem({ chat }) {
       onClick={handleDialogueClick}
     >
       <div className="dialogue__box">
-        <img
-          className="dialogue__img"
-          src={`../../../${user.image}`}
-          alt="avatar"
-        />
+        <img className="dialogue__img" src={`${user.image}`} alt="avatar" />
         <div className="dialogue__content">
           <span className="dialogue__name">{user.username}</span>
           <p className="dialogue__message">{message}</p>
