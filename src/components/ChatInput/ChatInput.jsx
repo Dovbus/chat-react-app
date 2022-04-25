@@ -67,7 +67,7 @@ function ChatInput() {
       setTimeout(() => {
         dispatch(closeNotification());
       }, 4000);
-    }, 1000);
+    }, 9000);
   }
 
   return (
