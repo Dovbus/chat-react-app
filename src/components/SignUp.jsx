@@ -12,7 +12,6 @@ function SignUp() {
   dispatch(setError(null));
 
   function handleRegister(email, password) {
-    console.log(vite);
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(

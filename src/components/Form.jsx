@@ -26,9 +26,8 @@ function Form({ title, handleFormSubmit }) {
       <div>
         <input
           {...register('email', {
-            required: true,
             pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              value: /^.+@.+\.[A-Z]{2,}$/i,
               message: 'Invalid email address',
             },
           })}
@@ -57,7 +56,6 @@ function Form({ title, handleFormSubmit }) {
       <div>
         <input
           {...register('password', {
-            required: true,
             minLength: { value: 6, message: 'At least 6 characters' },
           })}
           className={clsx('search', 'form__input', 'form__input--password', {

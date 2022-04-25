@@ -11,7 +11,6 @@ function Login() {
   const auth = getAuth();
 
   function handleLogin(email, password) {
-    console.log(vite);
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(
