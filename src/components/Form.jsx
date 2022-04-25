@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import Button from './UI/Button';
 
-import clsx from 'clsx';
 import '../scss/App.scss';
 
 function Form({ title, handleFormSubmit }) {
@@ -15,7 +15,7 @@ function Form({ title, handleFormSubmit }) {
     register,
     formState: { errors, isValid },
     handleSubmit,
-  } = useForm({ mode: 'onBlur' });
+  } = useForm();
 
   function onSubmit() {
     handleFormSubmit(email, pass);

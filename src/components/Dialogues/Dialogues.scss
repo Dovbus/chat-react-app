@@ -9,7 +9,7 @@
   &__search {
     margin: 0 5px 40px 10px;
     padding: 0 5px 0 30px;
-    background-image: url('assets/shared/icon-search.svg');
+    background-image: url('shared/icon-search.svg');
     background-repeat: no-repeat;
     background-position: center left;
     &:focus + .sidebar__button {
@@ -20,7 +20,7 @@
     opacity: 0;
     position: absolute;
     border: none;
-    background-image: url('assets/shared/icon-close.svg');
+    background-image: url('shared/icon-close.svg');
     top: 113px;
     right: 35px;
     cursor: pointer;
