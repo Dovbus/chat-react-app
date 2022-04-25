@@ -25,7 +25,7 @@ function Dialogues() {
     <div className="sidebar">
       <div className="sidebar__top">
         <div className="sidebar__box">
-          <img className="avatar" src={`src/${currentUser.image}`} alt="user" />
+          <img className="avatar" src={`${currentUser.image}`} alt="user" />
           <Button
             className="sidebar__log-out"
             onClick={() => dispatch(removeUser())}

@@ -15,7 +15,7 @@ function Notification() {
       ></button>
       <img
         className="notify-box__img"
-        src={'src/assets/shared/icon-mail.svg'}
+        src={'assets/shared/icon-mail.svg'}
         alt="mail icon"
       />
       You've Got Mail!

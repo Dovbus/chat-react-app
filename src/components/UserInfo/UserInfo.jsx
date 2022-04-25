@@ -12,7 +12,7 @@ function UserInfo() {
         {user?.image && (
           <img
             className="user-info__img"
-            src={`src/${user.image}`}
+            src={`${user.image}`}
             alt={user.username}
           />
         )}

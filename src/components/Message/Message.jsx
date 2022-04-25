@@ -17,7 +17,7 @@ function Message({ message, user }) {
             {id === user['user-id'] && (
               <img
                 className="message__img"
-                src={`src/${user.image}`}
+                src={`${user.image}`}
                 alt={user.username}
               />
             )}
