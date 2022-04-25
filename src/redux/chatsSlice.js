@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 
-const URL = 'https://chat-test-react-app.herokuapp.com/api/chats';
+const URL = 'https://localhost:3002/chats';
 
 export const loadChats = createAsyncThunk(
   'chats/loadChats',
