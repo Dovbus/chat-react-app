@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently \"react-scripts start\"  \"json-server -p 3002 -w src/db.json\"",
     "build": "vite build",
     "preview": "vite preview",
     "server": "json-server ./src/db.json --watch --port 3002"
@@ -11,6 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "clsx": "^1.1.1",
+    "concurrently": "^7.1.0",
     "date-fns": "^2.28.0",
     "firebase": "^9.6.11",
     "json-server": "^0.17.0",
