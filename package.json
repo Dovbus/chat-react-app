@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "concurrently \"vite start\"  \"json-server -p 3002 -w src/db.json\"",
+    "start": "concurrently \"vite start\"  \"npm run server\"",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "json-server ./src/db.json --watch --port 3002"
+    "server": "json-server ./src/db.json --watch --port 5000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
