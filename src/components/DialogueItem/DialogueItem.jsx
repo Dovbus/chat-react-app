@@ -13,9 +13,10 @@ function DialogueItem({ chat }) {
   const dispatch = useDispatch();
   const isNotification = useNotificationShow();
   const date = formatDialogueDate(messages[messages.length - 1].createdAt);
-  const message = messages[messages.length - 1].content.length > 15
-    ? `...${messages[messages.length - 1].content.slice(-15)}`
-    : messages[messages.length - 1].content;
+  const message =
+    messages[messages.length - 1].content.length > 15
+      ? `...${messages[messages.length - 1].content.slice(-15)}`
+      : messages[messages.length - 1].content;
 
   function handleDialogueClick() {
     dispatch(loadMessages(messages));
@@ -30,7 +31,11 @@ function DialogueItem({ chat }) {
       onClick={handleDialogueClick}
     >
       <div className="dialogue__box">
-        <img className="dialogue__img" src={`src/${user.image}`} alt="avatar" />
+        <img
+          className="dialogue__img"
+          src={`../../../${user.image}`}
+          alt="avatar"
+        />
         <div className="dialogue__content">
           <span className="dialogue__name">{user.username}</span>
           <p className="dialogue__message">{message}</p>
